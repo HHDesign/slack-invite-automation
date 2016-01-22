@@ -27,6 +27,7 @@ router.post('/invite', function(req, res) {
         if (body.ok) {
           res.render('result', {
             community: config.community,
+            slackUrl: config.slackUrl,
             message: 'Success! Check "'+ req.body.email +'" for an invite from Slack.'
           });
         } else {
@@ -34,6 +35,7 @@ router.post('/invite', function(req, res) {
           if (error === 'already_invited' || error === 'already_in_team') {
             res.render('result', {
               community: config.community,
+              slackUrl: config.slackUrl,
               message: 'Success! You were already invited.'
             });
             return;
@@ -45,6 +47,7 @@ router.post('/invite', function(req, res) {
 
           res.render('result', {
             community: config.community,
+            slackUrl: config.slackUrl,
             message: 'Failed! ' + error,
             isFailed: true
           });
