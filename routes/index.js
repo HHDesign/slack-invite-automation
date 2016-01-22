@@ -29,7 +29,7 @@ router.post('/invite', function(req, res) {
           res.render('result', {
             community: config.community,
             slackUrl: config.slackUrl,
-            message: 'Success! Check "'+ req.body.email +'" for an invite from Slack.'
+            message: '<div class="header">Success!</div><p> Check "'+ req.body.email +'" for an invite from Slack.</p>'
           });
         } else {
           var error = body.error;
@@ -37,7 +37,7 @@ router.post('/invite', function(req, res) {
             res.render('result', {
               community: config.community,
               slackUrl: config.slackUrl,
-              message: 'Success! You were already invited.'
+              message: '<div class="header">Success!</div><p> You were already invited.</p>'
             });
             return;
           } else if (error === 'invalid_email') {
@@ -49,7 +49,7 @@ router.post('/invite', function(req, res) {
           res.render('result', {
             community: config.community,
             slackUrl: config.slackUrl,
-            message: 'Failed! ' + error,
+            message: '<div class="header">Failed! </div><p>' + error + '</p>',
             isFailed: true
           });
         }

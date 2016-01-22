@@ -16,5 +16,5 @@ html
             h2.ui.center.aligned.header
               .content #[a(href="http://#{slackUrl}") #{community}]
           .ui.message(class="#{isFailed?'negative':'positive'}")
-            .header !{message}
+            | !{message}
           a.ui.basic.button(href="/") Back
