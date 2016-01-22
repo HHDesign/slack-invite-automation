@@ -21,3 +21,7 @@ width: 100%;
 #wrapper {
 	height: 100%;
 }
+
+.header {
+	padding: .1em;
+}

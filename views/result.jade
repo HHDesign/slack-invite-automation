@@ -15,10 +15,4 @@ html
               .content #[a(href="#{slackUrl}") #{community}]
           .ui.message(class="#{isFailed?'negative':'positive'}")
             .header !{message}
-
-    #wrapper
-      .main
-        .header
-          h1
-            strong #{community}
-          h2(class="#{isFailed?'error':''}") !{message}
+          a.ui.basic.button(href="/") Back
