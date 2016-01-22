@@ -10,19 +10,19 @@ html
     #wrapper
       .main
         .header
-          h1
-            strong #{community}
-          h2 Enter your email below to join #{community} on slack!
+          h2.ui.center.aligned.header
+            img.ui.circular.image(src="../images/hh-design-logo.jpg")
+            | Enter your email below to join #{community} on slack!
         .content
           .information
             form(method="POST", action="/invite")#join-form.form
-              div.ui.action.input
+              .ui.action.input
                 input(type="text", name="email", placeholder="Enter Your Email Address")#slack-email.field
                 if tokenRequired
                   input(type="text", name="token", placeholder="Enter the invite token you were given")#slack-token.field
                 button.ui.teal.right.labeled.icon.button(type='submit')
                   i.mail.icon
-                    Invite
+                  | Invite
                 //input(type="submit", value="Join").submit
     script.
       var tokenRequired = #{tokenRequired};
