@@ -13,7 +13,7 @@ html
           .header
             h2.ui.center.aligned.header
               img.ui.image(src="../images/hh-design-logo.jpg")
-              | Join #[a(href="{slackUrl}") {community} on Slack]
+              .content Join #[a(href="#{slackUrl}") #{community} on Slack]
           .content
             .information
               form(method="POST", action="/invite")#join-form.ui.large.form
@@ -23,7 +23,7 @@ html
                     input(type="text", name="token", placeholder="Enter the invite token you were given")#slack-token.field
                   button.ui.teal.right.labeled.icon.button(type='submit')
                     i.mail.icon
-                    | Invite
+                    | Join
                   //input(type="submit", value="Join").submit
     script.
       var tokenRequired = #{tokenRequired};
