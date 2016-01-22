@@ -7,6 +7,15 @@ html
     link(href="css/style.css", rel="stylesheet", type="text/css")
     link(href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,700italic|Open+Sans:700italic,400,600,300,700,800", rel="stylesheet", type="text/css")
   body
+    #wrapper.ui.middle.aligned.center.aligned.grid
+      .main.column
+        .ui.segment
+          .header
+            h2.ui.center.aligned.header
+              .content #[a(href="#{slackUrl}") #{community}]
+          .ui.message(class="#{isFailed?'negative':'positive'}")
+            .header !{message}
+
     #wrapper
       .main
         .header
