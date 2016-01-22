@@ -7,23 +7,24 @@ html
     link(href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css", rel="stylesheet", type="text/css")
     link(href="css/style.css", rel="stylesheet", type="text/css")
   body
-    #wrapper
-      .main
-        .header
-          h2.ui.center.aligned.header
-            img.ui.circular.image(src="../images/hh-design-logo.jpg")
-            | Enter your email below to join #{community} on slack!
-        .content
-          .information
-            form(method="POST", action="/invite")#join-form.form
-              .ui.action.input
-                input(type="text", name="email", placeholder="Enter Your Email Address")#slack-email.field
-                if tokenRequired
-                  input(type="text", name="token", placeholder="Enter the invite token you were given")#slack-token.field
-                button.ui.teal.right.labeled.icon.button(type='submit')
-                  i.mail.icon
-                  | Invite
-                //input(type="submit", value="Join").submit
+    #wrapper.ui.middle.aligned.center.aligned.grid
+      .main.column
+        .ui.segment
+          .header
+            h2.ui.center.aligned.header
+              img.ui.image(src="../images/hh-design-logo.jpg")
+              | Join #[a(href="{slackUrl}") {community} on Slack]
+          .content
+            .information
+              form(method="POST", action="/invite")#join-form.ui.large.form
+                .ui.action.input
+                  input(type="text", name="email", placeholder="Enter Your Email Address")#slack-email.field
+                  if tokenRequired
+                    input(type="text", name="token", placeholder="Enter the invite token you were given")#slack-token.field
+                  button.ui.teal.right.labeled.icon.button(type='submit')
+                    i.mail.icon
+                    | Invite
+                  //input(type="submit", value="Join").submit
     script.
       var tokenRequired = #{tokenRequired};
       var form = document.getElementById('join-form');
